@@ -19,26 +19,25 @@ class DataFetcher: ObservableObject {
         self.apiService = service
     }
 
-    func fetchCocktails() {
+    func fetchCocktails(withAlcohol: Bool) {
+        var url: String { withAlcohol ? URLPath.alcoholicCocktail : URLPath.nonAlcoholicCocktail }
         isLoading = true
         errorMessage = nil
         
-        apiService.fetchData(type: DrinkIngredient.self, url: URLPath.ingridientInfoByName + "Elderflower") { [weak self] result in
+        apiService.fetchData(type: Drinks.self, url: url) { [weak self] result in
             DispatchQueue.main.async {
                 self?.isLoading = false
                 switch result {
                 case .failure(let error):
                     self?.errorMessage = error.localizedDescription
-                     print(error.description)
-                    print(error)
+                    print(error.description)
                 case .success(let cocktails):
-//                    self?.cocktails = cocktails.drinks
+                    self?.cocktails = cocktails.drinks
                     print(cocktails)
                 }
             }
         }
     }
-
 
     //MARK: preview helpers
 
@@ -50,7 +49,7 @@ class DataFetcher: ObservableObject {
 
     static func successState() -> DataFetcher {
         let fetcher = DataFetcher ()
-//        fetcher.cocktails = [Cocktail.exampleOne(), Cocktail.exampleTwo()]
+        fetcher.cocktails = [Cocktail.exampleOne(), Cocktail.exampleTwo()]
         return fetcher
     }
 }

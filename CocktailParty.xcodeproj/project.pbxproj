@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380809242A87BCE600E72D99 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380809232A87BCE600E72D99 /* AppColors.swift */; };
 		38399D902A8624C10011B6AF /* CocktailPartyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399D8F2A8624C10011B6AF /* CocktailPartyApp.swift */; };
-		38399D922A8624C10011B6AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399D912A8624C10011B6AF /* ContentView.swift */; };
+		38399D922A8624C10011B6AF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399D912A8624C10011B6AF /* WelcomeView.swift */; };
 		38399D942A8624C20011B6AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38399D932A8624C20011B6AF /* Assets.xcassets */; };
 		38399D972A8624C20011B6AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38399D962A8624C20011B6AF /* Preview Assets.xcassets */; };
 		38399DA12A8624C20011B6AF /* CocktailPartyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399DA02A8624C20011B6AF /* CocktailPartyTests.swift */; };
@@ -41,9 +42,10 @@
 
 /* Begin PBXFileReference section */
 		380809222A878FCA00E72D99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		380809232A87BCE600E72D99 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		38399D8C2A8624C10011B6AF /* CocktailParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocktailParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38399D8F2A8624C10011B6AF /* CocktailPartyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailPartyApp.swift; sourceTree = "<group>"; };
-		38399D912A8624C10011B6AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		38399D912A8624C10011B6AF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		38399D932A8624C20011B6AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38399D962A8624C20011B6AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		38399D9C2A8624C20011B6AF /* CocktailPartyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocktailPartyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		380809252A87BCF000E72D99 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				380809232A87BCE600E72D99 /* AppColors.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		38399D832A8624C10011B6AF = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 				38399DBA2A86250B0011B6AF /* View */,
 				38399DBC2A8625410011B6AF /* ViewModel */,
 				38399DBB2A8625360011B6AF /* Model */,
+				380809252A87BCF000E72D99 /* Helpers */,
 				38399DB92A8624F70011B6AF /* Utils */,
 			);
 			path = CocktailParty;
@@ -154,7 +165,7 @@
 		38399DBA2A86250B0011B6AF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				38399D912A8624C10011B6AF /* ContentView.swift */,
+				38399D912A8624C10011B6AF /* WelcomeView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -310,9 +321,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				38399DC02A86297F0011B6AF /* APIServiceProtocol.swift in Sources */,
+				380809242A87BCE600E72D99 /* AppColors.swift in Sources */,
 				38399DC22A862A320011B6AF /* APIService.swift in Sources */,
 				38399DBE2A86290C0011B6AF /* DataFetcher.swift in Sources */,
-				38399D922A8624C10011B6AF /* ContentView.swift in Sources */,
+				38399D922A8624C10011B6AF /* WelcomeView.swift in Sources */,
 				38399D902A8624C10011B6AF /* CocktailPartyApp.swift in Sources */,
 				38399DC82A8697D00011B6AF /* DrinkIngredient.swift in Sources */,
 				38399DC42A862A900011B6AF /* APIError.swift in Sources */,
