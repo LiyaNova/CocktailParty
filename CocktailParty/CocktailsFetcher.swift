@@ -1,5 +1,5 @@
 //
-//  DataFetcher.swift
+//  CocktailsFetcher.swift
 //  CocktailParty
 //
 //  Created by Юлия Филимонова on 11.08.2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DataFetcher: ObservableObject {
+class CocktailsFetcher: ObservableObject {
 
     @Published var cocktails = [Cocktail]()
     @Published var isLoading: Bool = false
@@ -33,7 +33,6 @@ class DataFetcher: ObservableObject {
                     print(error.description)
                 case .success(let cocktails):
                     self?.cocktails = cocktails.drinks
-                    print(cocktails)
                 }
             }
         }
@@ -41,14 +40,14 @@ class DataFetcher: ObservableObject {
 
     //MARK: preview helpers
 
-    static func errorState() -> DataFetcher {
-        let fetcher = DataFetcher()
+    static func errorState() -> CocktailsFetcher {
+        let fetcher = CocktailsFetcher()
         fetcher.errorMessage = APIError.url(URLError.init(.notConnectedToInternet)).localizedDescription
         return fetcher
     }
 
-    static func successState() -> DataFetcher {
-        let fetcher = DataFetcher ()
+    static func successState() -> CocktailsFetcher {
+        let fetcher = CocktailsFetcher ()
         fetcher.cocktails = [Cocktail.exampleOne(), Cocktail.exampleTwo()]
         return fetcher
     }

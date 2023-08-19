@@ -11,7 +11,7 @@ struct Drinks: Codable {
     let drinks: [Cocktail]
 }
 
-struct Cocktail: Codable {
+struct Cocktail: Codable, Identifiable {
     var id: String?
     var name: String?
     var image: String?
@@ -173,6 +173,11 @@ struct Cocktail: Codable {
 
     static func exampleTwo() -> Cocktail {
         Cocktail(id: "11014", name: "Alexander", image: "https://www.thecocktaildb.com/images/media/drink/0clus51606772388.jpg")
+    }
+
+    static func exampleArray() -> [Cocktail] {
+        [Cocktail(id: "11014", name: "Alexander", image: "https://www.thecocktaildb.com/images/media/drink/0clus51606772388.jpg"),
+         Cocktail(id: "11009", name: "Moscow Mule", image:"https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg")]
     }
 
 }

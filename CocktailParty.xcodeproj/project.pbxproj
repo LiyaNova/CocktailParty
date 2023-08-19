@@ -15,12 +15,15 @@
 		38399DA12A8624C20011B6AF /* CocktailPartyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399DA02A8624C20011B6AF /* CocktailPartyTests.swift */; };
 		38399DAB2A8624C20011B6AF /* CocktailPartyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399DAA2A8624C20011B6AF /* CocktailPartyUITests.swift */; };
 		38399DAD2A8624C20011B6AF /* CocktailPartyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399DAC2A8624C20011B6AF /* CocktailPartyUITestsLaunchTests.swift */; };
-		38399DBE2A86290C0011B6AF /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399DBD2A86290C0011B6AF /* DataFetcher.swift */; };
+		38399DBE2A86290C0011B6AF /* CocktailsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399DBD2A86290C0011B6AF /* CocktailsFetcher.swift */; };
 		38399DC02A86297F0011B6AF /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399DBF2A86297F0011B6AF /* APIServiceProtocol.swift */; };
 		38399DC22A862A320011B6AF /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399DC12A862A320011B6AF /* APIService.swift */; };
 		38399DC42A862A900011B6AF /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399DC32A862A900011B6AF /* APIError.swift */; };
 		38399DC62A862D0E0011B6AF /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399DC52A862D0E0011B6AF /* Drinks.swift */; };
 		38399DC82A8697D00011B6AF /* DrinkIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38399DC72A8697D00011B6AF /* DrinkIngredient.swift */; };
+		3843207A2A9111480050BE06 /* CocktailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384320792A9111480050BE06 /* CocktailCell.swift */; };
+		38A5371A2A90ADAC00CDD5A5 /* MainCocktailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A537192A90ADAC00CDD5A5 /* MainCocktailView.swift */; };
+		38A5371F2A90B66100CDD5A5 /* EntranceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A5371E2A90B66100CDD5A5 /* EntranceButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,12 +56,15 @@
 		38399DA62A8624C20011B6AF /* CocktailPartyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocktailPartyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38399DAA2A8624C20011B6AF /* CocktailPartyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailPartyUITests.swift; sourceTree = "<group>"; };
 		38399DAC2A8624C20011B6AF /* CocktailPartyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailPartyUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		38399DBD2A86290C0011B6AF /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		38399DBD2A86290C0011B6AF /* CocktailsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsFetcher.swift; sourceTree = "<group>"; };
 		38399DBF2A86297F0011B6AF /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		38399DC12A862A320011B6AF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		38399DC32A862A900011B6AF /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		38399DC52A862D0E0011B6AF /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
 		38399DC72A8697D00011B6AF /* DrinkIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkIngredient.swift; sourceTree = "<group>"; };
+		384320792A9111480050BE06 /* CocktailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCell.swift; sourceTree = "<group>"; };
+		38A537192A90ADAC00CDD5A5 /* MainCocktailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCocktailView.swift; sourceTree = "<group>"; };
+		38A5371E2A90B66100CDD5A5 /* EntranceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				38399D912A8624C10011B6AF /* WelcomeView.swift */,
+				38A537192A90ADAC00CDD5A5 /* MainCocktailView.swift */,
+				38A5371D2A90B5C100CDD5A5 /* DetailedViews */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -182,12 +190,29 @@
 		38399DBC2A8625410011B6AF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				38399DBD2A86290C0011B6AF /* DataFetcher.swift */,
+				38399DBD2A86290C0011B6AF /* CocktailsFetcher.swift */,
+				38A537202A90B9D700CDD5A5 /* APIService */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		38A5371D2A90B5C100CDD5A5 /* DetailedViews */ = {
+			isa = PBXGroup;
+			children = (
+				38A5371E2A90B66100CDD5A5 /* EntranceButton.swift */,
+				384320792A9111480050BE06 /* CocktailCell.swift */,
+			);
+			name = DetailedViews;
+			sourceTree = "<group>";
+		};
+		38A537202A90B9D700CDD5A5 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
 				38399DBF2A86297F0011B6AF /* APIServiceProtocol.swift */,
 				38399DC12A862A320011B6AF /* APIService.swift */,
 				38399DC32A862A900011B6AF /* APIError.swift */,
 			);
-			name = ViewModel;
+			name = APIService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,10 +346,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				38399DC02A86297F0011B6AF /* APIServiceProtocol.swift in Sources */,
+				38A5371A2A90ADAC00CDD5A5 /* MainCocktailView.swift in Sources */,
+				3843207A2A9111480050BE06 /* CocktailCell.swift in Sources */,
 				380809242A87BCE600E72D99 /* AppColors.swift in Sources */,
 				38399DC22A862A320011B6AF /* APIService.swift in Sources */,
-				38399DBE2A86290C0011B6AF /* DataFetcher.swift in Sources */,
+				38399DBE2A86290C0011B6AF /* CocktailsFetcher.swift in Sources */,
 				38399D922A8624C10011B6AF /* WelcomeView.swift in Sources */,
+				38A5371F2A90B66100CDD5A5 /* EntranceButton.swift in Sources */,
 				38399D902A8624C10011B6AF /* CocktailPartyApp.swift in Sources */,
 				38399DC82A8697D00011B6AF /* DrinkIngredient.swift in Sources */,
 				38399DC42A862A900011B6AF /* APIError.swift in Sources */,
@@ -493,8 +521,9 @@
 				INFOPLIST_FILE = CocktailParty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -523,8 +552,9 @@
 				INFOPLIST_FILE = CocktailParty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

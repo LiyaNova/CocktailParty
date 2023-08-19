@@ -11,6 +11,6 @@ struct AppColors {
     static let bronzeOlive = Color("BronzeOlive")
     static let zeus = Color("Zeus")
     static let capeHoney = Color("CapeHoney")
-    static let islandSpice = Color("IslandSpice")
     static let reefGold = Color("ReefGold")
+    static let sunglow = Color("Sunglow")
 }

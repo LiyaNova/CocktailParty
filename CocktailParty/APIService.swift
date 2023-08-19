@@ -10,7 +10,6 @@ import Foundation
 struct APIService: APIServiceProtocol {
 
     func fetchData<T>(type: T.Type, url: String, completion: @escaping (Result<T, APIError>) -> Void) where T : Decodable {
-        print(URLPath.baseURL + url)
         guard let url = URL(string: URLPath.baseURL + url) else {
             let error = APIError.badURL
             completion(.failure(error))
