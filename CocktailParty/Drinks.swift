@@ -51,7 +51,7 @@ struct Cocktail: Codable, Identifiable {
     var measureThirteen: String?
     var measureFourteen: String?
     var measureFifteen: String?
-    var ingredientInfo: [(ingridient: String, measure: String)]?
+    var ingredientInfo: [(ingridient: String, measure: String?)]?
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -119,8 +119,22 @@ struct Cocktail: Codable, Identifiable {
         self.image = image
     }
 
+
+    init(id: String, name: String, image: String, tags: String?, video: String?, category: String?, isAlcoholic: String?, glassType: String?, instructions: String?, ingredientInfo: [(ingridient: String, measure: String?)]?) {
+        self.id = id
+        self.name = name
+        self.image = image
+        self.tags = tags
+        self.video = video
+        self.category = category
+        self.isAlcoholic = isAlcoholic
+        self.glassType = glassType
+        self.instructions = instructions
+        self.ingredientInfo = ingredientInfo
+    }
+
     mutating func addIngridient(_ ingridient: String?,_ measure: String?) {
-        guard let ingridient = ingridient, let measure = measure else { return }
+        guard let ingridient = ingridient else { return }
         ingredientInfo?.append((ingridient: ingridient, measure: measure))
     }
 
@@ -166,7 +180,7 @@ struct Cocktail: Codable, Identifiable {
         case measureFifteen = "strMeasure15"
     }
 
-
+// TEST FUNCS
     static func exampleOne() -> Cocktail {
         Cocktail(id: "11009", name: "Moscow Mule", image: "https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg")
     }
@@ -180,8 +194,12 @@ struct Cocktail: Codable, Identifiable {
          Cocktail(id: "11009", name: "Moscow Mule", image:"https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg")]
     }
 
+    static func exampleFullOne() -> Cocktail {
+        Cocktail(id: "11009", name: "Moscow Mule", image: "https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg", tags: "IBA,ContemporaryClassic", video: nil, category: "Punch / Party Drink", isAlcoholic: "Alcoholic", glassType: "Copper Mug", instructions: "Combine vodka and ginger beer in a highball glass filled with ice. Add lime juice. Stir gently. Garnish.", ingredientInfo: [(ingridient: "Vodka", measure: "2 oz"), (ingridient: "Lime juice", measure: "2 oz"), (ingridient: "Ginger ale", measure: "8 oz")])
+    }
+
+    static func exampleFullTwo() -> Cocktail {
+        Cocktail(id: "11014", name: "Alexander", image: "https://www.thecocktaildb.com/images/media/drink/0clus51606772388.jpg", tags: "IBA,Classic,Dairy", video: "https://www.youtube.com/watch?v=qEhRK_v2w2g", category: "Ordinary Drink", isAlcoholic: "Alcoholic", glassType: "Cocktail glass", instructions: "Shake all ingredients with ice and strain contents into a cocktail glass. Sprinkle nutmeg on top and serve.", ingredientInfo: [(ingridient: "Gin", measure: "1/2 oz"), (ingridient: "Creme de Cacao", measure: "1/2 oz"), (ingridient: "Light cream", measure: "2 oz"), (ingridient: "Nutmeg", measure: nil)])
+    }
 }
 
-
-//Cocktail(id: "11009", name: "Moscow Mule", image: "https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg", tags: "IBA,ContemporaryClassic", video: nil, category: "Punch / Party Drink", isAlcoholic: "Alcoholic", glassType: "Copper Mug", instructions: "Combine vodka and ginger beer in a highball glass filled with ice. Add lime juice. Stir gently. Garnish.", ingridientOne: "Vodka", ingridientTwo: "Lime juice", ingridientThree: "Ginger ale", ingridientFour: nil, ingridientFive: nil, ingridientSix: nil, ingridientSeven: nil, ingridientEight: nil, ingridientNine: nil, ingridientTen: nil, ingridientEleven: nil, ingridientTwelve: nil, ingridientThirteen: nil, ingridientFourteen: nil, ingridientFifteen: nil, measureOne: "2 oz ", measureTwo: "2 oz ", measureThree: "8 oz ", measureFour: nil, measureFive: nil, measureSix: nil, measureSeven: nil, measureEight: nil, measureNine: nil, measureTen: nil, measureEleven: nil, measureTwelve: nil, measureThirteen: nil, measureFourteen: nil, measureFifteen: nil)
-//Cocktail(id: "11014", name: "Alexander", image: "https://www.thecocktaildb.com/images/media/drink/0clus51606772388.jpg", tags: "IBA,Classic,Dairy", video: "https://www.youtube.com/watch?v=qEhRK_v2w2g", category: "Ordinary Drink", isAlcoholic: "Alcoholic", glassType: "Cocktail glass", instructions: "Shake all ingredients with ice and strain contents into a cocktail glass. Sprinkle nutmeg on top and serve.", ingridientOne: "Gin", ingridientTwo: "Creme de Cacao", ingridientThree: "Light cream", ingridientFour: "Nutmeg", ingridientFive: nil, ingridientSix: nil, ingridientSeven: nil, ingridientEight: nil, ingridientNine: nil, ingridientTen: nil, ingridientEleven: nil, ingridientTwelve: nil, ingridientThirteen: nil, ingridientFourteen: nil, ingridientFifteen: nil, measureOne: "1/2 oz ", measureTwo: "1/2 oz white ", measureThree: "2 oz ", measureFour: nil, measureFive: nil, measureSix: nil, measureSeven: nil, measureEight: nil, measureNine: nil, measureTen: nil, measureEleven: nil, measureTwelve: nil, measureThirteen: nil, measureFourteen: nil, measureFifteen: nil)

@@ -21,29 +21,48 @@ struct MainCocktailView: View {
                 LazyVGrid(columns: [GridItem(), GridItem()],
                           spacing: 0) {
                     ForEach(cocktailsFetcher.cocktails) { cocktail in
-                        CocktailCell(cocktail: cocktail)
+                        NavigationLink {
+                            DetailCocktailView(cocktail: cocktail)
+                        } label: {
+                            CocktailCell(cocktail: cocktail)
+                        }
                     }
                 } //:GRID
             } //:SCROLL
             .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .toolbarBackground(AppColors.bronzeOlive, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbar { favoritesBarItem }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    BackButtonView()
+                }
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    serchButton
+                    favoritesButton
+                }
+            }//:TOOLBAR
         } //:NAVIGATION
         .onAppear {
             cocktailsFetcher.fetchCocktails(withAlcohol: isAlcoholic)
         }
     }
 
-    //NAVBAR ITEM
-    var favoritesBarItem: ToolbarItem<(), Button<Image>> {
-        return ToolbarItem(placement: .navigationBarTrailing) {
-            Button {
-                //TODO
-            } label: {
-                Image(systemName: "heart.fill")
-            } 
+    //TOOLBAR BUTTONS
+    var serchButton: some View {
+        Button {
+            //TODO
+        } label: {
+            Image(systemName: "magnifyingglass")
+        }
+    }
+
+    var favoritesButton: some View {
+        Button {
+            //TODO
+        } label: {
+            Image(systemName: "heart.fill")
         }
     }
 }
@@ -51,6 +70,6 @@ struct MainCocktailView: View {
  //MARK: - PREVIEW
 struct MainCocktailView_Previews: PreviewProvider {
     static var previews: some View {
-        MainCocktailView(isAlcoholic: true, title: "Cocktails with alcohol")
+        MainCocktailView(isAlcoholic: true, title: "Your Cocktails")
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     //MARK: - PROPERTIES
+    let title = "Your Cocktails"
 
     //MARK: - BODY
     var body: some View {
@@ -24,13 +25,13 @@ struct WelcomeView: View {
                     VStack(alignment: .center, spacing: 10) {
                         // UPPER BUTTON
                         NavigationLink {
-                            MainCocktailView(isAlcoholic: true, title: "Alcoholic Cocktails")
+                            MainCocktailView(isAlcoholic: true, title: title)
                         } label: {
                             EntranceButton(label: "Alcohol")
                         }
                         // LOWER BUTTON
                         NavigationLink {
-                            MainCocktailView(isAlcoholic: false, title: "Alcohol-free cocktails")
+                            MainCocktailView(isAlcoholic: false, title: title)
                         } label: {
                             EntranceButton(label: "Alcohol-free")
                         }
