@@ -16,8 +16,14 @@ struct BackButtonView: View {
         Button {
             dismiss()
         } label: {
-            Image(systemName: "chevron.left")
-            //TODO
+            ZStack {
+                Circle()
+                    .fill(AppColors.bronzeOlive)
+                    .frame(width: 26, height: 26)
+                    .overlay(Circle().stroke(Color.white))
+                Image(systemName: "chevron.left")
+                    .imageScale(.small)
+            }
         }
     }
 }
@@ -26,7 +32,7 @@ struct BackButtonView: View {
 struct BackButtonView_Previews: PreviewProvider {
     static var previews: some View {
         BackButtonView()
-            .previewLayout(.fixed(width: 100, height: 100))
+            .previewLayout(.fixed(width: 60, height: 60))
             .padding()
     }
 }
