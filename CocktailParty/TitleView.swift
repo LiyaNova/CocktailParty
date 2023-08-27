@@ -9,13 +9,14 @@ import SwiftUI
 
 struct TitleView: View {
     //MARK: - PROPERTIES
-    let cocktail: Cocktail
+    var cocktail: Cocktail
 
     //MARK: - BODY
     var body: some View {
         VStack(spacing: 8) {
             Text(cocktail.name ?? "")
                 .font(.title).bold()
+                .multilineTextAlignment(.center)
                 .foregroundColor(AppColors.reefGold)
                 .underline(color: AppColors.reefGold)
             Text("\(cocktail.category ?? ""),  \(cocktail.isAlcoholic ?? "")")

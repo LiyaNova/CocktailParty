@@ -10,8 +10,8 @@ import SwiftUI
 struct MainCocktailsView: View {
     //MARK: - PROPERTIES
     @StateObject var cocktailsFetcher = MainCocktailsViewModel()
-    let title = "Your Cocktails"
-    let isAlcoholic: Bool
+    var title = "Your Cocktails"
+    var isAlcoholic: Bool
 
     //MARK: - BODY
     var body: some View {
@@ -40,7 +40,7 @@ struct MainCocktailsView: View {
                 ToolbarItem(placement: .principal) {
                     Text(title)
                         .font(.headline)
-                        .foregroundColor(AppColors.capeHoney)
+                        .foregroundColor(.accentColor)
                 }
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     SearchButton
@@ -59,7 +59,7 @@ struct MainCocktailsView: View {
             //TODO
         } label: {
             Image(systemName: "magnifyingglass")
-                .foregroundColor(AppColors.capeHoney)
+                .foregroundColor(.accentColor)
         }
     }
 

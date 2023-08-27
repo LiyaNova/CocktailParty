@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecipeView: View {
     //MARK: - PROPERTIES
-    let cocktail: Cocktail
+    var cocktail: Cocktail
 
     //MARK: - BODY
     var body: some View {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EntranceButton: View {
     //MARK: - PROPERTIES
-    let label: String
+    var label: String
 
     //MARK: - BODY
     var body: some View {

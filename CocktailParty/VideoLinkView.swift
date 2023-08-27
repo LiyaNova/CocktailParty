@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VideoLinkView: View {
     //MARK: - PROPERTIES
-    let link: String
+    var link: String
 
     //MARK: - BODY
     var body: some View {

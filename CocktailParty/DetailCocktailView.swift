@@ -10,7 +10,8 @@ import SwiftUI
 struct DetailCocktailView: View {
 //MARK: - PROPERTIES
     @StateObject var cocktailInfo = DetailCocktailViewModel()
-    let cocktailID: String
+    @State var scrollOffset: CGFloat = .zero
+    var cocktailID: String
 
     //MARK: - BODY
     var body: some View {

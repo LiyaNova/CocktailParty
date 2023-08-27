@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct CocktailCell: View {
-//MARK: - PROPERTIES
-    let cocktail: Cocktail
+    //MARK: - PROPERTIES
+    @State var isLiked = false
+    var cocktail: Cocktail
 
     //MARK: - BODY
     var body: some View {
@@ -35,19 +36,17 @@ struct CocktailCell: View {
             }
             // NAME
             HStack {
-                if let name = cocktail.name  {
-                    Text(name)
-                        .font(.subheadline)
-                        .fontWeight(.light)
-                        .foregroundColor(.accentColor)
-                }
+                Text(cocktail.name ?? "")
+                    .font(.subheadline)
+                    .fontWeight(.light)
+                    .foregroundColor(.accentColor)
                 Spacer()
                 Button {
-                    //TODO
+                    isLiked.toggle()
                 } label: {
-                    Image(systemName: "heart")
-                        .foregroundColor(AppColors.capeHoney)
+                    !isLiked ? Image(systemName: "heart") : Image(systemName: "heart.fill")
                 }
+                .foregroundColor(AppColors.capeHoney)
             }//:HSTACK
             .frame(height: 30)
             // LINE
@@ -59,7 +58,7 @@ struct CocktailCell: View {
     }
 }
 
- //MARK: - PREVIEW
+//MARK: - PREVIEW
 struct CocktailRow_Previews: PreviewProvider {
     static var previews: some View {
         CocktailCell(cocktail: Cocktail.exampleTwo())

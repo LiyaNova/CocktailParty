@@ -9,7 +9,6 @@ import SwiftUI
 
 struct WelcomeView: View {
     //MARK: - PROPERTIES
-    let title = "Your Cocktails"
 
     //MARK: - BODY
     var body: some View {

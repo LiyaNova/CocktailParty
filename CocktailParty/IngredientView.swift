@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IngredientView: View {
     //MARK: - PROPERTIES
-    let ingredient: (ingridient: String, measure: String?)
+    var ingredient: (ingridient: String, measure: String?)
 
     //MARK: - BODY
     var body: some View {
