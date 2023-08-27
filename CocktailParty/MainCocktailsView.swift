@@ -1,5 +1,5 @@
 //
-//  MainCocktailView.swift
+//  MainCocktailsView.swift
 //  CocktailParty
 //
 //  Created by Юлия Филимонова on 19.08.2023.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct MainCocktailView: View {
+struct MainCocktailsView: View {
     //MARK: - PROPERTIES
-    @StateObject var cocktailsFetcher = CocktailsFetcher()
+    @StateObject var cocktailsFetcher = MainCocktailsViewModel()
     let title = "Your Cocktails"
     let isAlcoholic: Bool
 
@@ -22,7 +22,7 @@ struct MainCocktailView: View {
                           spacing: 0) {
                     ForEach(cocktailsFetcher.cocktails) { cocktail in
                         NavigationLink {
-                            DetailCocktailView(cocktail: cocktail)
+                            DetailCocktailView(cocktailID: cocktail.id ?? "")
                         } label: {
                             CocktailCell(cocktail: cocktail)
                         }
@@ -76,6 +76,6 @@ struct MainCocktailView: View {
  //MARK: - PREVIEW
 struct MainCocktailView_Previews: PreviewProvider {
     static var previews: some View {
-        MainCocktailView(isAlcoholic: true)
+        MainCocktailsView(isAlcoholic: true)
     }
 }

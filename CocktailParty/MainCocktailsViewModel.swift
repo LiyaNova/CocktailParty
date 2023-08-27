@@ -1,5 +1,5 @@
 //
-//  CocktailsFetcher.swift
+//  MainCocktailsViewModel.swift
 //  CocktailParty
 //
 //  Created by Юлия Филимонова on 11.08.2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CocktailsFetcher: ObservableObject {
+class MainCocktailsViewModel: ObservableObject {
 
     @Published var cocktails = [Cocktail]()
     @Published var isLoading: Bool = false
@@ -40,14 +40,14 @@ class CocktailsFetcher: ObservableObject {
 
     //MARK: preview helpers
 
-    static func errorState() -> CocktailsFetcher {
-        let fetcher = CocktailsFetcher()
+    static func errorState() -> MainCocktailsViewModel {
+        let fetcher = MainCocktailsViewModel()
         fetcher.errorMessage = APIError.url(URLError.init(.notConnectedToInternet)).localizedDescription
         return fetcher
     }
 
-    static func successState() -> CocktailsFetcher {
-        let fetcher = CocktailsFetcher ()
+    static func successState() -> MainCocktailsViewModel {
+        let fetcher = MainCocktailsViewModel()
         fetcher.cocktails = [Cocktail.exampleOne(), Cocktail.exampleTwo()]
         return fetcher
     }

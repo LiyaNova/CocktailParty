@@ -189,11 +189,6 @@ struct Cocktail: Codable, Identifiable {
         Cocktail(id: "11014", name: "Alexander", image: "https://www.thecocktaildb.com/images/media/drink/0clus51606772388.jpg")
     }
 
-    static func exampleArray() -> [Cocktail] {
-        [Cocktail(id: "11014", name: "Alexander", image: "https://www.thecocktaildb.com/images/media/drink/0clus51606772388.jpg"),
-         Cocktail(id: "11009", name: "Moscow Mule", image:"https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg")]
-    }
-
     static func exampleFullOne() -> Cocktail {
         Cocktail(id: "11009", name: "Moscow Mule", image: "https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg", tags: "IBA,ContemporaryClassic", video: nil, category: "Punch / Party Drink", isAlcoholic: "Alcoholic", glassType: "Copper Mug", instructions: "Combine vodka and ginger beer in a highball glass filled with ice. Add lime juice. Stir gently. Garnish.", ingredientInfo: [(ingridient: "Vodka", measure: "2 oz"), (ingridient: "Lime juice", measure: "2 oz"), (ingridient: "Ginger ale", measure: "8 oz")])
     }
