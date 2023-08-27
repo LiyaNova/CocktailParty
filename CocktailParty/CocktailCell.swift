@@ -40,14 +40,15 @@ struct CocktailCell: View {
                         .font(.subheadline)
                         .fontWeight(.light)
                         .foregroundColor(.accentColor)
-                }//:TEXT
+                }
                 Spacer()
                 Button {
                     //TODO
                 } label: {
                     Image(systemName: "heart")
-                }//:BUTTON
-            }
+                        .foregroundColor(AppColors.capeHoney)
+                }
+            }//:HSTACK
             .frame(height: 30)
             // LINE
             Divider()

@@ -15,7 +15,7 @@ struct EntranceButton: View {
     var body: some View {
         // Button properties
         let buttonShape = Capsule()
-            .strokeBorder(Color.accentColor,lineWidth: 1.25)
+            .strokeBorder(AppColors.capeHoney,lineWidth: 1.25)
             .background(Capsule().fill(AppColors.zeus).opacity(0.7))
         let buttonFont = Font.system(size: 33, weight: .light, design: .serif)
         // BUTTON

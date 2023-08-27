@@ -26,23 +26,31 @@ struct DetailCocktailView: View {
                             }
                         }
                     }
-                    //TITLE
-                    //CATEGORY + isALCOHOLIC
+                    //TITLE + CATEGORY
+                    TitleView(cocktail: cocktail)
+                    //INSTRUCTIONS + INGREDIENTS:
+                    RecipeView(cocktail: cocktail)
+                    //VIDEO
+                    if let videoLink = cocktail.video {
+                        VideoLinkView(link: videoLink)
+                    } else {
+                        EmptyView()
+                    }
                     //TAGS
-                    //INSTRUCTIONS
-                    // GLASS TYPE
-                    //INGREDIENTS
-
+                    Text(cocktail.tags ?? "")
+                        .font(.caption2)
+                        .foregroundColor(AppColors.reefGold)
                 } //:VSTACK
             } //:SCROLL
             .edgesIgnoringSafeArea(.top)
             .navigationBarBackButtonHidden(true)
+            .toolbarBackground(AppColors.bronzeOlive.opacity(0.6), for: .navigationBar)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                         BackButtonView()
                 }
             } //:TOOLBAR
-        } //:NIVIGATION
+        } //:NAVIGATION
     }
 }
 

@@ -10,8 +10,8 @@ import SwiftUI
 struct MainCocktailView: View {
     //MARK: - PROPERTIES
     @StateObject var cocktailsFetcher = CocktailsFetcher()
+    let title = "Your Cocktails"
     let isAlcoholic: Bool
-    let title: String
 
     //MARK: - BODY
     var body: some View {
@@ -29,7 +29,6 @@ struct MainCocktailView: View {
                     }
                 } //:GRID
             } //:SCROLL
-            .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .toolbarBackground(AppColors.bronzeOlive, for: .navigationBar)
@@ -38,9 +37,14 @@ struct MainCocktailView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     BackButtonView()
                 }
+                ToolbarItem(placement: .principal) {
+                    Text(title)
+                        .font(.headline)
+                        .foregroundColor(AppColors.capeHoney)
+                }
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    serchButton
-                    favoritesButton
+                    SearchButton
+                    FavoritesButton
                 }
             }//:TOOLBAR
         } //:NAVIGATION
@@ -50,19 +54,21 @@ struct MainCocktailView: View {
     }
 
     //TOOLBAR BUTTONS
-    var serchButton: some View {
+    var SearchButton: some View {
         Button {
             //TODO
         } label: {
             Image(systemName: "magnifyingglass")
+                .foregroundColor(AppColors.capeHoney)
         }
     }
 
-    var favoritesButton: some View {
+    var FavoritesButton: some View {
         Button {
             //TODO
         } label: {
             Image(systemName: "heart.fill")
+                .foregroundColor(AppColors.capeHoney)
         }
     }
 }
@@ -70,6 +76,6 @@ struct MainCocktailView: View {
  //MARK: - PREVIEW
 struct MainCocktailView_Previews: PreviewProvider {
     static var previews: some View {
-        MainCocktailView(isAlcoholic: true, title: "Your Cocktails")
+        MainCocktailView(isAlcoholic: true)
     }
 }

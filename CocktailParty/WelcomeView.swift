@@ -25,13 +25,13 @@ struct WelcomeView: View {
                     VStack(alignment: .center, spacing: 10) {
                         // UPPER BUTTON
                         NavigationLink {
-                            MainCocktailView(isAlcoholic: true, title: title)
+                            MainCocktailView(isAlcoholic: true)
                         } label: {
                             EntranceButton(label: "Alcohol")
                         }
                         // LOWER BUTTON
                         NavigationLink {
-                            MainCocktailView(isAlcoholic: false, title: title)
+                            MainCocktailView(isAlcoholic: false)
                         } label: {
                             EntranceButton(label: "Alcohol-free")
                         }

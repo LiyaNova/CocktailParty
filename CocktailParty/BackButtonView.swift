@@ -20,9 +20,10 @@ struct BackButtonView: View {
                 Circle()
                     .fill(AppColors.bronzeOlive)
                     .frame(width: 26, height: 26)
-                    .overlay(Circle().stroke(Color.white))
+                    .overlay(Circle().stroke(AppColors.capeHoney))
                 Image(systemName: "chevron.left")
                     .imageScale(.small)
+                    .foregroundColor(AppColors.capeHoney)
             }
         }
     }
