@@ -31,6 +31,7 @@
 		389FB5282A92801100AD9C12 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389FB5272A92801100AD9C12 /* BackButtonView.swift */; };
 		38A5371A2A90ADAC00CDD5A5 /* MainCocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A537192A90ADAC00CDD5A5 /* MainCocktailsView.swift */; };
 		38A5371F2A90B66100CDD5A5 /* EntranceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A5371E2A90B66100CDD5A5 /* EntranceButton.swift */; };
+		38AA1C6D2A9E52A70077B137 /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA1C6C2A9E52A70077B137 /* ScrollOffsetPreferenceKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		389FB5272A92801100AD9C12 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 		38A537192A90ADAC00CDD5A5 /* MainCocktailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCocktailsView.swift; sourceTree = "<group>"; };
 		38A5371E2A90B66100CDD5A5 /* EntranceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceButton.swift; sourceTree = "<group>"; };
+		38AA1C6C2A9E52A70077B137 /* ScrollOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffsetPreferenceKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				380809232A87BCE600E72D99 /* AppColors.swift */,
+				38AA1C6C2A9E52A70077B137 /* ScrollOffsetPreferenceKey.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				38399DBE2A86290C0011B6AF /* MainCocktailsViewModel.swift in Sources */,
 				38399D922A8624C10011B6AF /* WelcomeView.swift in Sources */,
 				381E93BE2A926EA9002FE9F5 /* DetailCocktailView.swift in Sources */,
+				38AA1C6D2A9E52A70077B137 /* ScrollOffsetPreferenceKey.swift in Sources */,
 				38A5371F2A90B66100CDD5A5 /* EntranceButton.swift in Sources */,
 				38399D902A8624C10011B6AF /* CocktailPartyApp.swift in Sources */,
 				3899B34C2A9B7A7800C3FD76 /* RecipeView.swift in Sources */,

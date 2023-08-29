@@ -10,7 +10,7 @@ import SwiftUI
 struct DetailCocktailView: View {
 //MARK: - PROPERTIES
     @StateObject var cocktailInfo = DetailCocktailViewModel()
-    @State var scrollOffset: CGFloat = .zero
+    @State var scrollOffset: CGPoint = .zero
     var cocktailID: String
 
     //MARK: - BODY
@@ -40,9 +40,19 @@ struct DetailCocktailView: View {
                             EmptyView()
                         }
                     } //:VSTACK
+                    .background(GeometryReader { geometry in
+                        Color.clear
+                        .preference(key: ScrollOffsetPreferenceKey.self, value: geometry.frame(in: .named("scroll")).origin)
+                    })
+                    .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
+                        self.scrollOffset = value
+                    }
                 }
             } //:SCROLL
             .edgesIgnoringSafeArea(.top)
+            .coordinateSpace(name: "scroll")
+            .navigationTitle(scrollOffset.y < -100 ? "Your cocktail" : "")
+            .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .toolbarBackground(AppColors.bronzeOlive.opacity(0.6), for: .navigationBar)
             .toolbar {
