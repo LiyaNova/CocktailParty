@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CocktailCell: View {
     //MARK: - PROPERTIES
-    @State var isLiked = false
-    var cocktail: Cocktail
+    @State var isLiked = false // demo purpose
+    let cocktail: Cocktail
 
     //MARK: - BODY
     var body: some View {
@@ -21,16 +21,16 @@ struct CocktailCell: View {
                     if let image = phase.image {
                         image.resizable()
                             .scaledToFill()
-                            .frame(width: 170, height: 220)
-                            .cornerRadius(12)
+                            .frame(width: Constants.imageWidth, height: Constants.imageHeight)
+                            .cornerRadius(Constants.corenerRadius)
                             .clipped()
                             .overlay(
-                                RoundedRectangle(cornerRadius: 12)
+                                RoundedRectangle(cornerRadius: Constants.corenerRadius)
                                     .stroke(Color.accentColor,
-                                            lineWidth: 0.5))
+                                            lineWidth: Constants.borderLineWidth))
                     } else {
                         ProgressView()
-                            .frame(width: 170, height: 220)
+                            .frame(width: Constants.imageWidth, height: Constants.imageHeight)
                     }
                 }
             }
@@ -44,17 +44,29 @@ struct CocktailCell: View {
                 Button {
                     isLiked.toggle()
                 } label: {
-                    !isLiked ? Image(systemName: "heart") : Image(systemName: "heart.fill")
+                    !isLiked ? Image(systemName: Constants.emptyLike) : Image(systemName: Constants.fillLike)
                 }
                 .foregroundColor(AppColors.capeHoney)
             }//:HSTACK
-            .frame(height: 30)
+            .frame(height: Constants.hStackHeight)
             // LINE
             Divider()
                 .background(AppColors.capeHoney)
 
         }//:VSTACK
         .padding()
+    }
+
+    //MARK: - CONSTANTS
+    private struct Constants {
+        static let hStackHeight: CGFloat = 30
+        static let imageWidth: CGFloat = 170
+        static let imageHeight: CGFloat = 220
+        static let corenerRadius: CGFloat = 12
+        static let borderLineWidth: CGFloat = 0.5
+
+        static let emptyLike = "heart"
+        static let fillLike = "heart.fill"
     }
 }
 

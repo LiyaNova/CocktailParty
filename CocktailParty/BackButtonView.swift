@@ -19,13 +19,19 @@ struct BackButtonView: View {
             ZStack {
                 Circle()
                     .fill(AppColors.bronzeOlive)
-                    .frame(width: 26, height: 26)
+                    .frame(width: Constants.buttonWidth, height: Constants.buttonWidth)
                     .overlay(Circle().stroke(Color.accentColor))
-                Image(systemName: "chevron.left")
+                Image(systemName: Constants.arrowLeft)
                     .imageScale(.small)
                     .foregroundColor(Color.accentColor)
             }
         }
+    }
+
+    //MARK: - CONSTANTS
+    private struct Constants {
+        static let arrowLeft = "chevron.left"
+        static let buttonWidth: CGFloat = 26
     }
 }
 

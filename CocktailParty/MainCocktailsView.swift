@@ -10,16 +10,15 @@ import SwiftUI
 struct MainCocktailsView: View {
     //MARK: - PROPERTIES
     @StateObject var cocktailsFetcher = MainCocktailsViewModel()
-    var title = "Your Cocktails"
-    var isAlcoholic: Bool
+    let gridLayout = Array(repeating: GridItem(), count: Constants.gridLayoutNumber)
+    let isAlcoholic: Bool
 
     //MARK: - BODY
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
                 //COCKTAILS COLLECTION
-                LazyVGrid(columns: [GridItem(), GridItem()],
-                          spacing: 0) {
+                LazyVGrid(columns: gridLayout) {
                     ForEach(cocktailsFetcher.cocktails) { cocktail in
                         NavigationLink {
                             DetailCocktailView(cocktailID: cocktail.id ?? "")
@@ -38,7 +37,7 @@ struct MainCocktailsView: View {
                     BackButtonView()
                 }
                 ToolbarItem(placement: .principal) {
-                    Text(title)
+                    Text(Constants.title)
                         .font(.headline)
                         .foregroundColor(.accentColor)
                 }
@@ -58,7 +57,7 @@ struct MainCocktailsView: View {
         Button {
             //TODO
         } label: {
-            Image(systemName: "magnifyingglass")
+            Image(systemName: Constants.loupe)
                 .foregroundColor(.accentColor)
         }
     }
@@ -67,9 +66,18 @@ struct MainCocktailsView: View {
         Button {
             //TODO
         } label: {
-            Image(systemName: "heart.fill")
+            Image(systemName: Constants.favorites)
                 .foregroundColor(AppColors.capeHoney)
         }
+    }
+
+    //MARK: - CONSTANTS
+    private struct Constants {
+        static let title = "Your Cocktails"
+        static let loupe = "magnifyingglass"
+        static let favorites = "heart.fill"
+
+        static let gridLayoutNumber = 2
     }
 }
 

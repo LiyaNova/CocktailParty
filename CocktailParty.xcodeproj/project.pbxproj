@@ -145,9 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				38399D8F2A8624C10011B6AF /* CocktailPartyApp.swift */,
-				38399DBA2A86250B0011B6AF /* View */,
-				38399DBC2A8625410011B6AF /* ViewModel */,
-				38399DBB2A8625360011B6AF /* Model */,
+				38399DBA2A86250B0011B6AF /* Screens */,
+				38399DBB2A8625360011B6AF /* Models */,
+				38A537202A90B9D700CDD5A5 /* APIService */,
 				380809252A87BCF000E72D99 /* Helpers */,
 				38399DB92A8624F70011B6AF /* Utils */,
 			);
@@ -189,7 +189,7 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		38399DBA2A86250B0011B6AF /* View */ = {
+		38399DBA2A86250B0011B6AF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				3899B3462A9B716600C3FD76 /* WelcomeView */,
@@ -197,26 +197,16 @@
 				3899B3482A9B71E000C3FD76 /* DetailCocktailView */,
 				38A5371D2A90B5C100CDD5A5 /* CommonViews */,
 			);
-			name = View;
+			name = Screens;
 			sourceTree = "<group>";
 		};
-		38399DBB2A8625360011B6AF /* Model */ = {
+		38399DBB2A8625360011B6AF /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				38399DC52A862D0E0011B6AF /* Drinks.swift */,
 				38399DC72A8697D00011B6AF /* DrinkIngredient.swift */,
 			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		38399DBC2A8625410011B6AF /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				38399DBD2A86290C0011B6AF /* MainCocktailsViewModel.swift */,
-				3899B34F2A9B91BC00C3FD76 /* DetailCocktailViewModel.swift */,
-				38A537202A90B9D700CDD5A5 /* APIService */,
-			);
-			name = ViewModel;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		3893C5C22ABAD58C00BD2D9D /* MotionView */ = {
@@ -232,8 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				38399D912A8624C10011B6AF /* WelcomeView.swift */,
-				38A5371E2A90B66100CDD5A5 /* EntranceButton.swift */,
-				3893C5C22ABAD58C00BD2D9D /* MotionView */,
+				38BA47F12ABB3BC2009B9789 /* Views */,
 			);
 			name = WelcomeView;
 			sourceTree = "<group>";
@@ -241,8 +230,9 @@
 		3899B3472A9B717A00C3FD76 /* MainCocktailView */ = {
 			isa = PBXGroup;
 			children = (
+				38399DBD2A86290C0011B6AF /* MainCocktailsViewModel.swift */,
 				38A537192A90ADAC00CDD5A5 /* MainCocktailsView.swift */,
-				384320792A9111480050BE06 /* CocktailCell.swift */,
+				38BA47F22ABB3BDE009B9789 /* Views */,
 			);
 			name = MainCocktailView;
 			sourceTree = "<group>";
@@ -250,11 +240,9 @@
 		3899B3482A9B71E000C3FD76 /* DetailCocktailView */ = {
 			isa = PBXGroup;
 			children = (
+				3899B34F2A9B91BC00C3FD76 /* DetailCocktailViewModel.swift */,
 				381E93BD2A926EA9002FE9F5 /* DetailCocktailView.swift */,
-				3899B34D2A9B813800C3FD76 /* TitleView.swift */,
-				3899B34B2A9B7A7800C3FD76 /* RecipeView.swift */,
-				385AFB5A2A9A4FFD00446C8B /* IngredientView.swift */,
-				3899B3492A9B729F00C3FD76 /* VideoLinkView.swift */,
+				38BA47F32ABB3BF2009B9789 /* Views */,
 			);
 			name = DetailCocktailView;
 			sourceTree = "<group>";
@@ -275,6 +263,34 @@
 				38399DC32A862A900011B6AF /* APIError.swift */,
 			);
 			name = APIService;
+			sourceTree = "<group>";
+		};
+		38BA47F12ABB3BC2009B9789 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3893C5C22ABAD58C00BD2D9D /* MotionView */,
+				38A5371E2A90B66100CDD5A5 /* EntranceButton.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		38BA47F22ABB3BDE009B9789 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				384320792A9111480050BE06 /* CocktailCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		38BA47F32ABB3BF2009B9789 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3899B34D2A9B813800C3FD76 /* TitleView.swift */,
+				3899B34B2A9B7A7800C3FD76 /* RecipeView.swift */,
+				385AFB5A2A9A4FFD00446C8B /* IngredientView.swift */,
+				3899B3492A9B729F00C3FD76 /* VideoLinkView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

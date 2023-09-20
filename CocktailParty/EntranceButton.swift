@@ -9,13 +9,13 @@ import SwiftUI
 
 struct EntranceButton: View {
     //MARK: - PROPERTIES
-    var label: String
+    let label: String
 
     //MARK: - BODY
     var body: some View {
         // Button properties
         let buttonShape = Capsule()
-            .strokeBorder(AppColors.capeHoney,lineWidth: Constants.borderlineWidth)
+            .strokeBorder(AppColors.capeHoney,lineWidth: Constants.borderLineWidth)
             .background(Capsule().fill(AppColors.zeus).opacity(Constants.opacity))
         let buttonFont = Font.system(size: Constants.fontSize, weight: .light, design: .serif)
         // BUTTON
@@ -35,7 +35,7 @@ struct EntranceButton: View {
         static let buttonPadding: CGFloat = 10
         static let fontSize: CGFloat = 20
         static let opacity: CGFloat = 0.7
-        static let borderlineWidth: CGFloat = 1.25
+        static let borderLineWidth: CGFloat = 1.25
     }
 }
 
