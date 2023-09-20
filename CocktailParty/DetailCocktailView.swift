@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailCocktailView: View {
 //MARK: - PROPERTIES
     @StateObject var cocktailInfo = DetailCocktailViewModel()
+    @State var isRandomCocktail = false
     @State var scrollOffset: CGPoint = .zero
     var cocktailID: String
 

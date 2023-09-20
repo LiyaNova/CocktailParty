@@ -15,16 +15,27 @@ struct EntranceButton: View {
     var body: some View {
         // Button properties
         let buttonShape = Capsule()
-            .strokeBorder(AppColors.capeHoney,lineWidth: 1.25)
-            .background(Capsule().fill(AppColors.zeus).opacity(0.7))
-        let buttonFont = Font.system(size: 33, weight: .light, design: .serif)
+            .strokeBorder(AppColors.capeHoney,lineWidth: Constants.borderlineWidth)
+            .background(Capsule().fill(AppColors.zeus).opacity(Constants.opacity))
+        let buttonFont = Font.system(size: Constants.fontSize, weight: .light, design: .serif)
         // BUTTON
-        Text(label)
-            .padding(.horizontal, 20)
-            .padding(.vertical, 10)
-            .foregroundColor(AppColors.sunglow)
-            .font(buttonFont)
-            .background(buttonShape)
+        HStack {
+            Spacer()
+            Text(label.uppercased())
+            Spacer()
+        }
+        .padding(.vertical, Constants.buttonPadding)
+        .foregroundColor(AppColors.sunglow)
+        .font(buttonFont)
+        .background(buttonShape)
+    }
+
+    //MARK: - CONSTANTS
+    private struct Constants {
+        static let buttonPadding: CGFloat = 10
+        static let fontSize: CGFloat = 20
+        static let opacity: CGFloat = 0.7
+        static let borderlineWidth: CGFloat = 1.25
     }
 }
 
