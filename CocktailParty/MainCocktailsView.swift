@@ -21,7 +21,7 @@ struct MainCocktailsView: View {
                 LazyVGrid(columns: gridLayout) {
                     ForEach(cocktailsFetcher.cocktails) { cocktail in
                         NavigationLink {
-                            DetailCocktailView(cocktailID: cocktail.id ?? "")
+                            DetailCocktailView(cocktailID: cocktail.id)
                         } label: {
                             CocktailCell(cocktail: cocktail)
                         }

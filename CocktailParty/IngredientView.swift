@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IngredientView: View {
     //MARK: - PROPERTIES
-    var ingredient: (ingridient: String, measure: String?)
+    let ingredient: (ingridient: String, measure: String?)
 
     //MARK: - BODY
     var body: some View {
@@ -18,7 +18,7 @@ struct IngredientView: View {
                 InfoButton
                 Text(ingredient.ingridient)
             }//:GROUP
-            Spacer(minLength: 25)
+            Spacer(minLength: Constants.spacerLength)
             Text(ingredient.measure ?? "")
         }//:HSTACK
         .foregroundColor(AppColors.capeHoney)
@@ -28,9 +28,15 @@ struct IngredientView: View {
         Button {
             //TODO
         } label: {
-            Image(systemName: "info.circle")
+            Image(systemName: Constants.info)
                 .foregroundColor(AppColors.sunglow)
         }
+    }
+
+    //MARK: - CONSTANTS
+    private struct Constants {
+        static let spacerLength: CGFloat = 25
+        static let info = "info.circle"
     }
 }
  //MARK: - PREVIEW

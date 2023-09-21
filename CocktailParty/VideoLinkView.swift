@@ -9,25 +9,33 @@ import SwiftUI
 
 struct VideoLinkView: View {
     //MARK: - PROPERTIES
-    var link: String
+    let link: String
 
     //MARK: - BODY
     var body: some View {
         GroupBox {
             HStack {
-                Text("About cocktail")
+                Text(Constants.title)
                     .foregroundColor(AppColors.capeHoney)
                     .font(.subheadline)
                 Spacer()
                 Group {
-                    Link(destination: URL(string: link)!) {
-                        Image(systemName: "arrow.up.right.square")
+                    if let url = URL(string: link) {
+                        Link(destination: url) {
+                            Image(systemName: Constants.linkArrow)
+                        }
                     }
                 }//:GROUP
                 .foregroundColor(AppColors.sunglow)
             }//:HSTACK
         }//:GROUPBOX
         .padding([.leading, .trailing])
+    }
+
+    //MARK: - CONSTANTS
+    private struct Constants {
+        static let title = "About cocktail"
+        static let linkArrow = "arrow.up.right.square"
     }
 }
 

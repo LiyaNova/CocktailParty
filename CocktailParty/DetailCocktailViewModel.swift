@@ -19,8 +19,8 @@ class DetailCocktailViewModel: ObservableObject {
         self.apiService = service
     }
 
-    func fetchCocktailInfo(with id: String) {
-        let url = URLPath.detailInfo + id
+    func fetchCocktailInfo(with id: String?) {
+        let url = (id != nil) ? URLPath.detailInfo + id! : URLPath.randomeCocktail
         isLoading = true
         errorMessage = nil
         
@@ -32,7 +32,7 @@ class DetailCocktailViewModel: ObservableObject {
                     self?.errorMessage = error.localizedDescription
                     print(error.description)
                 case .success(let cocktail):
-                    self?.cocktail = cocktail.drinks[0]
+                    self?.cocktail = cocktail.drinks.first
                 }
             }
         }

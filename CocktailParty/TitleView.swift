@@ -9,11 +9,11 @@ import SwiftUI
 
 struct TitleView: View {
     //MARK: - PROPERTIES
-    var cocktail: Cocktail
+    let cocktail: Cocktail
 
     //MARK: - BODY
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: Constants.vStackSpacing) {
             Text(cocktail.name ?? "")
                 .font(.title).bold()
                 .multilineTextAlignment(.center)
@@ -24,7 +24,7 @@ struct TitleView: View {
                 .foregroundColor(AppColors.capeHoney)
 
             HStack {
-                Image(systemName: "wineglass")
+                Image(systemName: Constants.glass)
                     .imageScale(.small)
                     .foregroundColor(AppColors.reefGold)
                 Text(cocktail.glassType ?? "")
@@ -33,6 +33,12 @@ struct TitleView: View {
             }//:HSTACK
             
         }//:VSTACK
+    }
+
+    //MARK: - CONSTANTS
+    private struct Constants {
+        static let vStackSpacing: CGFloat = 8
+        static let glass = "wineglass"
     }
 }
 

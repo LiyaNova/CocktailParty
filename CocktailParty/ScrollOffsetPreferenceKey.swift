@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ScrollOffsetPreferenceKey: PreferenceKey {
     static var defaultValue: CGPoint = .zero
+    static let detailCocktailViewScrollName = "detailCocktailViewScroll"
 
     static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) {
     }

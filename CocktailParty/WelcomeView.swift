@@ -47,7 +47,7 @@ struct WelcomeView: View {
                             }
                             //LOWER BUTTON
                             NavigationLink {
-                                //TODO
+                                DetailCocktailView()
                             } label: {
                                 EntranceButton(label: Constants.randomCocktail)
                             }

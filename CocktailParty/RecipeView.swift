@@ -9,13 +9,13 @@ import SwiftUI
 
 struct RecipeView: View {
     //MARK: - PROPERTIES
-    var cocktail: Cocktail
+    let cocktail: Cocktail
 
     //MARK: - BODY
     var body: some View {
         GroupBox {
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Instructions:")
+            VStack(alignment: .leading, spacing: Constants.vStackSpacing) {
+                Text(Constants.instructions)
                     .font(.title3).bold()
                     .foregroundColor(AppColors.reefGold)
                 Text(cocktail.instructions ?? "")
@@ -23,7 +23,7 @@ struct RecipeView: View {
 
                 Divider().background(AppColors.capeHoney)
 
-                Text("Ingredients:")
+                Text(Constants.ingredients)
                     .font(.headline).bold()
                     .foregroundColor(AppColors.reefGold)
                 if let ingredientInfo = cocktail.ingredientInfo {
@@ -34,6 +34,13 @@ struct RecipeView: View {
             }//:VSTACK
         }//:GROUP
         .padding([.leading,.trailing])
+    }
+
+    //MARK: - CONSTANTS
+    private struct Constants {
+        static let vStackSpacing: CGFloat = 10
+        static let instructions = "Instructions:"
+        static let ingredients = "Ingredients:"
     }
 }
 
