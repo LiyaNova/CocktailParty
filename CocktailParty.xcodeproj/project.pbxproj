@@ -34,6 +34,9 @@
 		38A5371A2A90ADAC00CDD5A5 /* MainCocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A537192A90ADAC00CDD5A5 /* MainCocktailsView.swift */; };
 		38A5371F2A90B66100CDD5A5 /* EntranceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A5371E2A90B66100CDD5A5 /* EntranceButton.swift */; };
 		38AA1C6D2A9E52A70077B137 /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA1C6C2A9E52A70077B137 /* ScrollOffsetPreferenceKey.swift */; };
+		38E86AD42ABC688A004E771E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E86AD32ABC688A004E771E /* AppCoordinator.swift */; };
+		38E86AD62ABC7633004E771E /* AppCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E86AD52ABC7633004E771E /* AppCoordinatorView.swift */; };
+		38E86AD82ABCA677004E771E /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E86AD72ABCA677004E771E /* CoordinatorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		38A537192A90ADAC00CDD5A5 /* MainCocktailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCocktailsView.swift; sourceTree = "<group>"; };
 		38A5371E2A90B66100CDD5A5 /* EntranceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceButton.swift; sourceTree = "<group>"; };
 		38AA1C6C2A9E52A70077B137 /* ScrollOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffsetPreferenceKey.swift; sourceTree = "<group>"; };
+		38E86AD32ABC688A004E771E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		38E86AD52ABC7633004E771E /* AppCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorView.swift; sourceTree = "<group>"; };
+		38E86AD72ABCA677004E771E /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +154,7 @@
 				38399DBA2A86250B0011B6AF /* Screens */,
 				38399DBB2A8625360011B6AF /* Models */,
 				38A537202A90B9D700CDD5A5 /* APIService */,
+				38E86AD22ABC6851004E771E /* AppCoordinator */,
 				380809252A87BCF000E72D99 /* Helpers */,
 				38399DB92A8624F70011B6AF /* Utils */,
 			);
@@ -293,6 +300,16 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		38E86AD22ABC6851004E771E /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				38E86AD32ABC688A004E771E /* AppCoordinator.swift */,
+				38E86AD52ABC7633004E771E /* AppCoordinatorView.swift */,
+				38E86AD72ABCA677004E771E /* CoordinatorProtocol.swift */,
+			);
+			name = AppCoordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -429,10 +446,12 @@
 				385AFB5B2A9A4FFD00446C8B /* IngredientView.swift in Sources */,
 				3843207A2A9111480050BE06 /* CocktailCell.swift in Sources */,
 				3899B34E2A9B813800C3FD76 /* TitleView.swift in Sources */,
+				38E86AD42ABC688A004E771E /* AppCoordinator.swift in Sources */,
 				380809242A87BCE600E72D99 /* AppColors.swift in Sources */,
 				3899B3502A9B91BC00C3FD76 /* DetailCocktailViewModel.swift in Sources */,
 				3893C5C12ABACFE900BD2D9D /* MotionViewModel.swift in Sources */,
 				38399DC22A862A320011B6AF /* APIService.swift in Sources */,
+				38E86AD62ABC7633004E771E /* AppCoordinatorView.swift in Sources */,
 				38399DBE2A86290C0011B6AF /* MainCocktailsViewModel.swift in Sources */,
 				38399D922A8624C10011B6AF /* WelcomeView.swift in Sources */,
 				3893C5BF2ABAB97000BD2D9D /* MotionView.swift in Sources */,
@@ -443,6 +462,7 @@
 				3899B34C2A9B7A7800C3FD76 /* RecipeView.swift in Sources */,
 				38399DC82A8697D00011B6AF /* DrinkIngredient.swift in Sources */,
 				38399DC42A862A900011B6AF /* APIError.swift in Sources */,
+				38E86AD82ABCA677004E771E /* CoordinatorProtocol.swift in Sources */,
 				3899B34A2A9B729F00C3FD76 /* VideoLinkView.swift in Sources */,
 				38399DC62A862D0E0011B6AF /* Drinks.swift in Sources */,
 			);

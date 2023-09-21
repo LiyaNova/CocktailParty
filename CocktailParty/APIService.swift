@@ -35,6 +35,7 @@ struct APIService: APIServiceProtocol {
     
 }
 
+//MARK: - API endpoints
 struct URLPath {
     static let baseURL = "https://www.thecocktaildb.com/api/json/v1/1/"
     static let alcoholicCocktail = "filter.php?a=Alcoholic"

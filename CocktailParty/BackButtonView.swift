@@ -9,12 +9,12 @@ import SwiftUI
 
 struct BackButtonView: View {
     //MARK: - PROPERTIES
-    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var coordinator: AppCoordinator
 
     //MARK: - BODY
     var body: some View {
         Button {
-            dismiss()
+            coordinator.pop()
         } label: {
             ZStack {
                 Circle()

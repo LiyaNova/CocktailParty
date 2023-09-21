@@ -9,44 +9,42 @@ import SwiftUI
 
 struct MainCocktailsView: View {
     //MARK: - PROPERTIES
+    @EnvironmentObject private var coordinator: AppCoordinator
     @StateObject var cocktailsFetcher = MainCocktailsViewModel()
+
     let gridLayout = Array(repeating: GridItem(), count: Constants.gridLayoutNumber)
     let isAlcoholic: Bool
 
     //MARK: - BODY
     var body: some View {
-        NavigationStack {
-            ScrollView(showsIndicators: false) {
-                //COCKTAILS COLLECTION
-                LazyVGrid(columns: gridLayout) {
-                    ForEach(cocktailsFetcher.cocktails) { cocktail in
-                        NavigationLink {
-                            DetailCocktailView(cocktailID: cocktail.id)
-                        } label: {
-                            CocktailCell(cocktail: cocktail)
-                        }
+        ScrollView(showsIndicators: false) {
+            //COCKTAILS COLLECTION
+            LazyVGrid(columns: gridLayout) {
+                ForEach(cocktailsFetcher.cocktails) { cocktail in
+                    NavigationLink(value: ContentLink.detailView(id: cocktail.id)) {
+                        CocktailCell(cocktail: cocktail)
                     }
-                } //:GRID
-            } //:SCROLL
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
-            .toolbarBackground(AppColors.bronzeOlive, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    BackButtonView()
                 }
-                ToolbarItem(placement: .principal) {
-                    Text(Constants.title)
-                        .font(.headline)
-                        .foregroundColor(.accentColor)
-                }
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    SearchButton
-                    FavoritesButton
-                }
-            }//:TOOLBAR
-        } //:NAVIGATION
+            } //:GRID
+        } //:SCROLL
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbarBackground(AppColors.bronzeOlive, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                BackButtonView()
+            }
+            ToolbarItem(placement: .principal) {
+                Text(Constants.title)
+                    .font(.headline)
+                    .foregroundColor(.accentColor)
+            }
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                SearchButton
+                FavoritesButton
+            }
+        }//:TOOLBAR
         .onAppear {
             cocktailsFetcher.fetchCocktails(withAlcohol: isAlcoholic)
         }
@@ -81,9 +79,11 @@ struct MainCocktailsView: View {
     }
 }
 
- //MARK: - PREVIEW
+//MARK: - PREVIEW
 struct MainCocktailView_Previews: PreviewProvider {
     static var previews: some View {
-        MainCocktailsView(isAlcoholic: true)
+        NavigationStack {
+            MainCocktailsView(isAlcoholic: true)
+        }
     }
 }
