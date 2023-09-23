@@ -30,6 +30,7 @@
 		3899B34C2A9B7A7800C3FD76 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899B34B2A9B7A7800C3FD76 /* RecipeView.swift */; };
 		3899B34E2A9B813800C3FD76 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899B34D2A9B813800C3FD76 /* TitleView.swift */; };
 		3899B3502A9B91BC00C3FD76 /* DetailCocktailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899B34F2A9B91BC00C3FD76 /* DetailCocktailViewModel.swift */; };
+		389CF9B92ABD6F680058842C /* BaseViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CF9B82ABD6F680058842C /* BaseViewModelProtocol.swift */; };
 		389FB5282A92801100AD9C12 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389FB5272A92801100AD9C12 /* BackButtonView.swift */; };
 		38A5371A2A90ADAC00CDD5A5 /* MainCocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A537192A90ADAC00CDD5A5 /* MainCocktailsView.swift */; };
 		38A5371F2A90B66100CDD5A5 /* EntranceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A5371E2A90B66100CDD5A5 /* EntranceButton.swift */; };
@@ -84,6 +85,7 @@
 		3899B34B2A9B7A7800C3FD76 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		3899B34D2A9B813800C3FD76 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		3899B34F2A9B91BC00C3FD76 /* DetailCocktailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCocktailViewModel.swift; sourceTree = "<group>"; };
+		389CF9B82ABD6F680058842C /* BaseViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelProtocol.swift; sourceTree = "<group>"; };
 		389FB5272A92801100AD9C12 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 		38A537192A90ADAC00CDD5A5 /* MainCocktailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCocktailsView.swift; sourceTree = "<group>"; };
 		38A5371E2A90B66100CDD5A5 /* EntranceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceButton.swift; sourceTree = "<group>"; };
@@ -151,8 +153,9 @@
 			isa = PBXGroup;
 			children = (
 				38399D8F2A8624C10011B6AF /* CocktailPartyApp.swift */,
-				38399DBA2A86250B0011B6AF /* Screens */,
-				38399DBB2A8625360011B6AF /* Models */,
+				38399DBA2A86250B0011B6AF /* View */,
+				389CF9BA2ABD74740058842C /* ViewModel */,
+				38399DBB2A8625360011B6AF /* Model */,
 				38A537202A90B9D700CDD5A5 /* APIService */,
 				38E86AD22ABC6851004E771E /* AppCoordinator */,
 				380809252A87BCF000E72D99 /* Helpers */,
@@ -196,7 +199,7 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		38399DBA2A86250B0011B6AF /* Screens */ = {
+		38399DBA2A86250B0011B6AF /* View */ = {
 			isa = PBXGroup;
 			children = (
 				3899B3462A9B716600C3FD76 /* WelcomeView */,
@@ -204,16 +207,16 @@
 				3899B3482A9B71E000C3FD76 /* DetailCocktailView */,
 				38A5371D2A90B5C100CDD5A5 /* CommonViews */,
 			);
-			name = Screens;
+			name = View;
 			sourceTree = "<group>";
 		};
-		38399DBB2A8625360011B6AF /* Models */ = {
+		38399DBB2A8625360011B6AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				38399DC52A862D0E0011B6AF /* Drinks.swift */,
 				38399DC72A8697D00011B6AF /* DrinkIngredient.swift */,
 			);
-			name = Models;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		3893C5C22ABAD58C00BD2D9D /* MotionView */ = {
@@ -229,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				38399D912A8624C10011B6AF /* WelcomeView.swift */,
-				38BA47F12ABB3BC2009B9789 /* Views */,
+				38BA47F12ABB3BC2009B9789 /* DetailViews */,
 			);
 			name = WelcomeView;
 			sourceTree = "<group>";
@@ -237,9 +240,8 @@
 		3899B3472A9B717A00C3FD76 /* MainCocktailView */ = {
 			isa = PBXGroup;
 			children = (
-				38399DBD2A86290C0011B6AF /* MainCocktailsViewModel.swift */,
 				38A537192A90ADAC00CDD5A5 /* MainCocktailsView.swift */,
-				38BA47F22ABB3BDE009B9789 /* Views */,
+				38BA47F22ABB3BDE009B9789 /* DetailViews */,
 			);
 			name = MainCocktailView;
 			sourceTree = "<group>";
@@ -247,11 +249,20 @@
 		3899B3482A9B71E000C3FD76 /* DetailCocktailView */ = {
 			isa = PBXGroup;
 			children = (
-				3899B34F2A9B91BC00C3FD76 /* DetailCocktailViewModel.swift */,
 				381E93BD2A926EA9002FE9F5 /* DetailCocktailView.swift */,
-				38BA47F32ABB3BF2009B9789 /* Views */,
+				38BA47F32ABB3BF2009B9789 /* DetailViews */,
 			);
 			name = DetailCocktailView;
+			sourceTree = "<group>";
+		};
+		389CF9BA2ABD74740058842C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				389CF9B82ABD6F680058842C /* BaseViewModelProtocol.swift */,
+				38399DBD2A86290C0011B6AF /* MainCocktailsViewModel.swift */,
+				3899B34F2A9B91BC00C3FD76 /* DetailCocktailViewModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		38A5371D2A90B5C100CDD5A5 /* CommonViews */ = {
@@ -272,24 +283,24 @@
 			name = APIService;
 			sourceTree = "<group>";
 		};
-		38BA47F12ABB3BC2009B9789 /* Views */ = {
+		38BA47F12ABB3BC2009B9789 /* DetailViews */ = {
 			isa = PBXGroup;
 			children = (
 				3893C5C22ABAD58C00BD2D9D /* MotionView */,
 				38A5371E2A90B66100CDD5A5 /* EntranceButton.swift */,
 			);
-			name = Views;
+			name = DetailViews;
 			sourceTree = "<group>";
 		};
-		38BA47F22ABB3BDE009B9789 /* Views */ = {
+		38BA47F22ABB3BDE009B9789 /* DetailViews */ = {
 			isa = PBXGroup;
 			children = (
 				384320792A9111480050BE06 /* CocktailCell.swift */,
 			);
-			name = Views;
+			name = DetailViews;
 			sourceTree = "<group>";
 		};
-		38BA47F32ABB3BF2009B9789 /* Views */ = {
+		38BA47F32ABB3BF2009B9789 /* DetailViews */ = {
 			isa = PBXGroup;
 			children = (
 				3899B34D2A9B813800C3FD76 /* TitleView.swift */,
@@ -297,7 +308,7 @@
 				385AFB5A2A9A4FFD00446C8B /* IngredientView.swift */,
 				3899B3492A9B729F00C3FD76 /* VideoLinkView.swift */,
 			);
-			name = Views;
+			name = DetailViews;
 			sourceTree = "<group>";
 		};
 		38E86AD22ABC6851004E771E /* AppCoordinator */ = {
@@ -447,6 +458,7 @@
 				3843207A2A9111480050BE06 /* CocktailCell.swift in Sources */,
 				3899B34E2A9B813800C3FD76 /* TitleView.swift in Sources */,
 				38E86AD42ABC688A004E771E /* AppCoordinator.swift in Sources */,
+				389CF9B92ABD6F680058842C /* BaseViewModelProtocol.swift in Sources */,
 				380809242A87BCE600E72D99 /* AppColors.swift in Sources */,
 				3899B3502A9B91BC00C3FD76 /* DetailCocktailViewModel.swift in Sources */,
 				3893C5C12ABACFE900BD2D9D /* MotionViewModel.swift in Sources */,

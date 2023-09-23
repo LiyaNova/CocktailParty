@@ -80,6 +80,8 @@ struct DetailCocktailView: View {
 //MARK: - PREVIEW
 struct DetailCocktailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailCocktailView(cocktailID: "11007")
+        NavigationStack {
+            DetailCocktailView(cocktailID: "11007")
+        }
     }
 }

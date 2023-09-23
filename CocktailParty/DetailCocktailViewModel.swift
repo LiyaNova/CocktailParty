@@ -7,13 +7,13 @@
 
 import Foundation
 
-class DetailCocktailViewModel: ObservableObject {
+class DetailCocktailViewModel: BaseViewModelProtocol {
 
     @Published var cocktail: Cocktail?
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
 
-    private let apiService: APIServiceProtocol
+    var apiService: APIServiceProtocol
 
     init(service: APIServiceProtocol = APIService()) {
         self.apiService = service
