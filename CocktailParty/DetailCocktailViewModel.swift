@@ -19,7 +19,7 @@ class DetailCocktailViewModel: BaseViewModelProtocol {
         self.apiService = service
     }
 
-    func fetchCocktailInfo(with id: String?) {
+    func fetchCocktailInfo(with id: String? = nil) {
         let url = (id != nil) ? URLPath.detailInfo + id! : URLPath.randomeCocktail
         isLoading = true
         errorMessage = nil
