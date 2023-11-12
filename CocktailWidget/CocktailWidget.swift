@@ -13,7 +13,7 @@ struct CocktailWidget: Widget {
     let kind: String = Constants.kind
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: CocktailWidgetProvider(apiService: APIService())) { entry in
+        StaticConfiguration(kind: kind, provider: CocktailWidgetProvider()) { entry in
             if #available(iOS 17.0, *) {
                 CocktailWidgetEntryView(entry: entry)
                     .containerBackground(.background, for: .widget)
@@ -24,6 +24,7 @@ struct CocktailWidget: Widget {
         .contentMarginsDisabled()
         .configurationDisplayName(Constants.displayName)
         .description(Constants.description)
+        .supportedFamilies([.systemSmall])
     }
 
     //MARK: - CONSTANTS

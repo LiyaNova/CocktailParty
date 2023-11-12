@@ -26,6 +26,7 @@ struct CocktailWidgetEntryView : View {
                     Text("\(entry.cocktail.name ?? "")")
                         .foregroundColor(AppColors.sunglow)
                         .font(.system(.caption2, design: .rounded)).bold()
+                        .minimumScaleFactor(0.6)
                         .multilineTextAlignment(.center)
                         .padding(.leading, Constants.imageSize + Constants.textTrailing)
                         .padding(.trailing, Constants.textTrailing)

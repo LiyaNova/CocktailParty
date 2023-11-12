@@ -289,10 +289,9 @@
 			isa = PBXGroup;
 			children = (
 				383CF0242AFD1B900095ECED /* CocktailWidgetBundle.swift */,
-				383CF0262AFD1B900095ECED /* CocktailWidget.swift */,
-				383F54AC2AFD27020050D607 /* CocktailWidgetEntryView.swift */,
-				383CF0322AFD1CB00095ECED /* CocktailWidgetProvider.swift */,
-				383F54A92AFD264E0050D607 /* CocktailWidgetEntry.swift */,
+				38F5E68D2B012F850003696A /* View */,
+				38F5E68C2B012F630003696A /* ViewModel */,
+				38F5E68B2B012F590003696A /* Model */,
 				388ACA032AFFDDDA006D94D2 /* Utils */,
 			);
 			path = CocktailWidget;
@@ -407,6 +406,31 @@
 				38E86AD72ABCA677004E771E /* CoordinatorProtocol.swift */,
 			);
 			name = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		38F5E68B2B012F590003696A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				383F54A92AFD264E0050D607 /* CocktailWidgetEntry.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		38F5E68C2B012F630003696A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				383CF0322AFD1CB00095ECED /* CocktailWidgetProvider.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		38F5E68D2B012F850003696A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				383CF0262AFD1B900095ECED /* CocktailWidget.swift */,
+				383F54AC2AFD27020050D607 /* CocktailWidgetEntryView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
