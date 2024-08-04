@@ -1,25 +1,5 @@
 # CocktailParty 
 
-Мобильное приложение созданное при помощи фреймворка SwiftUI на базе [TheCocktailDB](https://www.thecocktaildb.com/api.php) API.
-
-**Стек**: SwiftUI, WidgetKit, MVVM, Coordinator, URLSession
-
-**Особенности**:
-API имеет свои ограничени по выдаче данных и сложности по структуре объектов, поэтому, для удобства работы, объекты
-инициализируются в более подходящие модели.
-Фичи, которые мне хотелось реализовать, но это оказалось невозможным со стороны API, отмечены (*),
-и реализованы исключительно со стороны фронтэнда.
-
-**Фичи**:
-- Возможностью выбора типа коктельной вечеринки в зависимоти от категории: алкогольная, безалкогольная, случайная
-- Анимация главного экрана на основе изменения параметров графических элементов
-- Экран с коллекцией коктейлейтвыбранной категории на основе LazyVGrid
-- (*) Возможность ставить лайк понравившемуся коктейлю (эмитация добавления в избранное)
-- Экран с подробной информацией о коктейле
-- Виджет, ежедневно выполняющий запрос к API и отображающий "Коктейль дня"
-- Приложение реализовано на базе темной темы
-
-_________________
 App created with SwiftUI and [TheCocktailDB](https://www.thecocktaildb.com/api.php) API.
 
 **Stack**: SwiftUI, WidgetKit, MVVM, Coordinator, URLSession, 
@@ -38,7 +18,15 @@ and implemented exclusively at the frontend.
 - Detail screen with information about a cocktail
 - Widget that makes a daily api call and displays the “Cocktail of the Day”
 - App is based on a dark theme
+ 
 ​
-​
+​<img src="https://github.com/user-attachments/assets/83b2390a-bca8-42c3-b8dd-1510c17eccae" width="330"/>
+​<img src="https://github.com/user-attachments/assets/594bfeec-7a99-48ce-9b6c-f2c0bfe0dceb" width="330"/>
+​<img src="https://github.com/user-attachments/assets/e8386009-5766-417e-a948-52032135425d" width="330"/>
+​<img src="https://github.com/user-attachments/assets/e6673c66-1234-4cd5-94e9-f25f0718cb99" width="330"/>
+​<img src="https://github.com/user-attachments/assets/8d3efd53-1bbe-4919-8ff5-fc67293455b1" width="330"/>
+​<img src="https://github.com/user-attachments/assets/cc843ddc-b99d-4f52-9842-aa77c7bb6873" width="330"/>
 
-  
+
+
+
